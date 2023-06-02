@@ -9,7 +9,7 @@ sudo apt install squid -y
 mkdir /var/lib/ssnvpn-pro/
 rm -f /usr/bin/menu-ssh
 wget -q -O /var/lib/ssnvpn-pro/ipvps.conf "${REPO}ipvps.conf"
-wger -q -O /usr/bin/tendang "${REPO}ssh/tendang.sh"
+wget -q -O /usr/bin/tendang "${REPO}ssh/tendang.sh"
 wget -q -O /usr/bin/autokill "${REPO}ssh/autokill.sh"
 wget -q -O /usr/bin/menu-ssh "${REPO}ssh/menu-ssh.sh"
 wget -q -O /usr/bin/restart "${REPO}file/restart.sh"
