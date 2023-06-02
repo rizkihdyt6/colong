@@ -42,11 +42,11 @@ echo -e "[ ${green}INFO${NC} ] Aight good ... installation file is ready"
 sleep 2
 
 mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
-echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
+echo "IP= " >> /var/lib/scrz-prem/ipvps.conf
 
 sudo apt install vnstat
-sudo apt install squid
-wget -q -O ${REPO}file/tools.sh && chmod +x tools.sh && ./tools.sh
+sudo apt insta squid
+wget -q -O "${REPO}file/tools.sh" && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
 
@@ -86,10 +86,10 @@ echo -e "$green      Install SSH / WS / UDP             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget ${REPO}openvpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
+wget "${REPO}openvpn/ssh-vpn.sh" && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 sleep 2
-wget ${REPO}ssh/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
-wget -q -O kanyut.sh ${REPO}file/kanyut.sh && chmod +x kanyut.sh && ./kanyut.sh
+wget "${REPO}ssh/nginx-ssl.sh" && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget -q -O kanyut.sh "${REPO}file/kanyut.sh" && chmod +x kanyut.sh && ./kanyut.sh
 sleep 1
 echo -e "$greenDONE INSTALL SSH / WS / UDP $NC"
 #install ssh ovpn
@@ -98,7 +98,7 @@ echo -e "$green      Install Websocket              $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 clear
-wget ${REPO}websocket/insshws.sh && chmod +x insshws.sh && ./insshws.sh
+wget "${REPO}websocket/insshws.sh" && chmod +x insshws.sh && ./insshws.sh
 sleep 1
 echo -e " $green DONE INSTALL WEBSOCKET $NC"
 #exp
@@ -120,29 +120,18 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install ALL XRAY               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
-wget -q -O ins-xray.sh ${REPO}xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
+wget -q -O ins-xray.sh "${REPO}xray/ins-xray.sh" && chmod +x ins-xray.sh && ./ins-xray.sh
+sleep 1
+wget -q -O senmenu.sh "${REPO}menu/senmenu.sh" && chmod +x senmenu.sh && ./senmenu.sh
 sleep 1
 echo -e "$green DONE INSTALL ALL XRAY $NC"
-clear
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "$green      Install ALL MENU               $NC"
-echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-apt install unzip -y
-wget "${REPO}menu/menu.zip" >/dev/null 2>&1
-    unzip menu.zip
-    rm -f menu.zip
-    chmod +x *
-    mv *
-sleep 1
-echo -e "$green DONE INSTALL ALL MENU $NC"
-clear
 #install slowdns
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install slowdns               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 sleep 2
 
-wget -q -O slowdns.sh ${REPO}slowdns/slowdns.sh && chmod +x slowdns.sh && ./slowdns.sh
+wget -q -O slowdns.sh "${REPO}slowdns/slowdns.sh" && chmod +x slowdns.sh && ./slowdns.sh
 
 #cronjob
 #echo "30 * * * * root removelog" >> /etc/crontab
@@ -165,7 +154,7 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install OPENVPN             $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 
-wget ${REPO}openvpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget "${REPO}openvpn/vpn.sh" &&  chmod +x vpn.sh && ./vpn.sh
 sleep1
 echo -e " $green DONE INSTALL OPENVPN $NC"
 #install remove log
