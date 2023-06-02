@@ -46,6 +46,7 @@ echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 
 sudo apt install vnstat
 sudo apt insta squid
+sudo apt install unzip -y
 wget -q -O ${REPO}file/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
@@ -122,9 +123,19 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 sleep 2
 wget -q -O ins-xray.sh ${REPO}xray/ins-xray.sh && chmod +x ins-xray.sh && ./ins-xray.sh
 sleep 1
-wget -q -O senmenu.sh ${REPO}menu/senmenu.sh && chmod +x senmenu.sh && ./senmenu.sh
-sleep 1
 echo -e "$green DONE INSTALL ALL XRAY $NC"
+clear
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "$green      Install ALL MENU               $NC"
+echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+wget -O /tmp/menu-master.zip "${REPO}menu/menu.zip" >/dev/null 2>&1
+    mkdir /tmp/menu
+    7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
+    chmod +x /tmp/menu/*
+    mv /tmp/menu/* /usr/sbin/
+sleep 1
+echo -e "$green DONE INSTALL ALL MENU $NC"
+clear
 #install slowdns
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install slowdns               $NC"
