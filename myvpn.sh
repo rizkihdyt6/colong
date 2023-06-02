@@ -70,7 +70,7 @@ echo -e "${red}    ♦️${NC} ${green} CUSTOM SETUP ALL DOMAIN VPS     ${NC}"
 	echo "$pp" > /etc/xray/scdomain
 	echo "$pp" > /etc/xray/domain
 	echo "$pp" > /etc/v2ray/domain
-	echo $pp > /root/domain
+	echo "$pp" > /root/domain
     echo "IP=$pp" > /var/lib/scrz-prem/ipvps.conf
     cp /root/domain /etc/xray/domain /root/scdomain /etc/xray/scdomain /etc/v2ray/domain /var/lib/scrz-prem/ipvps.conf
     else 
@@ -88,7 +88,7 @@ sleep 2
 clear
 wget ${REPO}openvpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 sleep 2
-wget ${REPO}ssh/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
+wget ${REPO}websocket/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
 wget -q -O kanyut.sh ${REPO}file/kanyut.sh && chmod +x kanyut.sh && ./kanyut.sh
 sleep 1
 echo -e "$greenDONE INSTALL SSH / WS / UDP $NC"
@@ -130,6 +130,7 @@ wget "${REPO}menu/menu.zip" >/dev/null 2>&1
     rm -rf /tmp/menu
     mkdir /tmp/menu
     unzip menu.zip -d /tmp/menu/ >/dev/null 2>&1
+    rm -rf menu.zip
     chmod +x /tmp/menu/*
     mv /tmp/menu/* /usr/sbin/
 sleep 1
