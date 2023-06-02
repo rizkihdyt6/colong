@@ -45,8 +45,7 @@ mkdir -p /var/lib/scrz-prem >/dev/null 2>&1
 echo "IP=" >> /var/lib/scrz-prem/ipvps.conf
 
 sudo apt install vnstat
-sudo apt insta squid
-sudo apt install unzip -y
+sudo apt install squid
 wget -q -O ${REPO}file/tools.sh && chmod +x tools.sh && ./tools.sh
 rm tools.sh
 clear
@@ -128,11 +127,12 @@ clear
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e "$green      Install ALL MENU               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-wget -O /tmp/menu-master.zip "${REPO}menu/menu.zip" >/dev/null 2>&1
-    mkdir /tmp/menu
-    7z e  /tmp/menu-master.zip -o/tmp/menu/ >/dev/null 2>&1
-    chmod +x /tmp/menu/*
-    mv /tmp/menu/* /usr/sbin/
+apt install unzip -y
+wget -O "${REPO}menu/menu.zip" >/dev/null 2>&1
+    7z e  menu.zip
+    rm -f menu zip
+    chmod +x *
+    mv * /usr/sbin/
 sleep 1
 echo -e "$green DONE INSTALL ALL MENU $NC"
 clear
