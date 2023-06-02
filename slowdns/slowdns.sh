@@ -32,7 +32,6 @@ netfilter-persistent reload
 
 #delete directory
 rm -rf /root/nsdomain
-rm nsdomain
 
 #input nameserver auto to cloudflare
 
