@@ -90,7 +90,6 @@ wget ${REPO}openvpn/ssh-vpn.sh && chmod +x ssh-vpn.sh && ./ssh-vpn.sh
 sleep 2
 wget ${REPO}ssh/nginx-ssl.sh && chmod +x nginx-ssl.sh && ./nginx-ssl.sh
 wget -q -O kanyut.sh ${REPO}file/kanyut.sh && chmod +x kanyut.sh && ./kanyut.sh
-wget --load-cookies /tmp/cookies.txt ${UDPCORE} -O install-udp && rm -rf /tmp/cookies.txt && chmod +x install-udp && ./install-udp
 sleep 1
 echo -e "$greenDONE INSTALL SSH / WS / UDP $NC"
 #install ssh ovpn
