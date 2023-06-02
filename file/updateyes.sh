@@ -1,23 +1,27 @@
 #!/bin/bash
-echo -e cheking update
+dateFromServer=$(curl -v --insecure --silent https://google.com/ 2>&1 | grep Date | sed -e 's/< Date: //')
+biji=`date +"%Y-%m-%d" -d "$dateFromServer"`
+###########- COLOR CODE -##############
+REPO="https://raw.githubusercontent.com/rizkihdyt6/colong/main/"
+echo -e " [INFO] Downloading Update File"
 sleep 2
-#hapus
-rm -f /usr/bin/setting
-rm -f /usr/bin/menu
-rm -f /usr/bin/usernew
-rm -f /usr/bin/menu-ssh
-#download
-wget -q -O /usr/bin/menu "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/menu.sh"
-wget -q -O /usr/bin/setting "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/Themes/setting.sh"
-wget -q -O /usr/bin/usernew "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/menu/usernew.sh"
-wget -q -O /usr/bin/menu-ssh "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/menu-ssh.sh"
-wget -q -O /usr/bin/tendang "https://raw.githubusercontent.com/Azigaming404/Autoscript-by-azi/main/limit/tendang.sh"
-echo "* * * * * root bot" >> /etc/crontab
-#izin
-chmod 777 /usr/bin/tendang
-chmod 777 /usr/bin/usernew
-chmod 777 /usr/bin/menu
-chmod 777 /usr/bin/setting
-chmod 777 /usr/bin/menu-ssh
-rm -rf updateyes.sh
+rm -rf /tmp/menu
+wget "${REPO}menu/menu.zip" >/dev/null 2>&1
+    rm -rf /tmp/menu
+    mkdir /tmp/menu
+    unzip menu.zip -d /tmp/menu/ >/dev/null 2>&1
+    rm -rf menu.zip
+    chmod +x /tmp/menu/*
+    mv /tmp/menu/* /usr/sbin/
+
+echo -e " [INFO] Update Successfully"
+mkdir -p /etc/ssh
+mkdir -p /etc/vmx
+mkdir -p /etc/vls
+mkdir -p /etc/tr
+mkdir -p /etc/ss
+rm -rf update.sh
+sleep 2
+read -n 1 -s -r -p "Press [ Enter ] to back on menu"
 menu
+exit
