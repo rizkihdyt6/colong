@@ -128,11 +128,11 @@ echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━�
 echo -e "$green      Install ALL MENU               $NC"
 echo -e "\e[33m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 apt install unzip -y
-wget -O "${REPO}menu/menu.zip" >/dev/null 2>&1
-    7z e  menu.zip
-    rm -f menu zip
+wget "${REPO}menu/menu.zip" >/dev/null 2>&1
+    unzip menu.zip
+    rm -f menu.zip
     chmod +x *
-    mv * /usr/sbin/
+    mv *
 sleep 1
 echo -e "$green DONE INSTALL ALL MENU $NC"
 clear
